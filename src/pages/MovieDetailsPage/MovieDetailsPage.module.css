@@ -1,0 +1,30 @@
+.goBackLink:active {
+  font-weight: bold;
+  color: rgb(128, 110, 201);
+}
+.goBackLink:hover {
+  font-weight: bold;
+  color: rgb(42, 25, 106);
+}
+
+.detailsContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-top: 30px;
+}
+
+.movieTitle {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.movieDetails:hover {
+  font-weight: bold;
+  color: rgb(42, 25, 106);
+}
+.movieDetails:active {
+  font-weight: bold;
+  color: rgb(128, 110, 201);
+}

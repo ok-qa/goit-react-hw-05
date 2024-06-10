@@ -1,0 +1,18 @@
+.navContainer {
+  background-color: rgb(187, 209, 209);
+  border-radius: 10px;
+  position: sticky;
+  top: 0px;
+  padding: 0.5em 0em;
+
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 40px;
+}

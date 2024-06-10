@@ -1,0 +1,32 @@
+.moviesList {
+  list-style: none;
+}
+.moviesItem {
+  font-weight: bold;
+}
+
+.movieLink:hover {
+  cursor: pointer;
+  color: rgb(83, 83, 192);
+}
+
+.movieTitle {
+  padding: auto;
+  margin-top: 0.5em;
+  color: black;
+}
+
+.movieTitle:hover {
+  cursor: pointer;
+  color: rgb(83, 83, 226);
+}
+.itemWrapper {
+  margin: auto;
+  padding: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+  align-content: space-between;
+}
