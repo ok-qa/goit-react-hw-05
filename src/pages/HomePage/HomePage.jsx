@@ -5,7 +5,7 @@ import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -15,7 +15,7 @@ const HomePage = () => {
     const fetchMovies = async () => {
       try {
         const movies = await getTrendingMovies();
-        setMovies(movies);
+        setMovies(movies.result);
         setIsLoading(true);
         setError(false);
       } catch (error) {
@@ -31,7 +31,7 @@ const HomePage = () => {
     <>
       {error && <ErrorMessage />}
       {isLoading && <Loader />}
-      {movies?.result.length > 0 && <MovieList movies={movies.result} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </>
   );
 };
