@@ -4,9 +4,7 @@ import css from "./App.module.css";
 import Navigation from "./components/Navigation/Navigation";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const MoviesSearchPage = lazy(() =>
-  import("./pages/MoviesSearchPage/MoviesSearchPage")
-);
+const MoviesSearchPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
   import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
@@ -25,8 +23,8 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<MoviesSearchPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-            <Route path="/movies/:movieId/cast" element={<MovieCast />} />
-            <Route path="/movies/:movieId/reviews" element={<MovieReviews />} />
+            <Route path="cast" element={<MovieCast />} />
+            <Route path="reviews" element={<MovieReviews />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
-import css from "./MoviesSearchPage.module.css";
+import css from "./MoviesPage.module.css";
 import { getMoviesByQuery } from "../../api-servise";
 import toast, { Toaster } from "react-hot-toast";
 
