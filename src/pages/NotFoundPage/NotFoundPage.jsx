@@ -7,7 +7,7 @@ const NotFoundPage = () => {
       <p>
         Opps! Looks like the page you are looking for does not exist. Go back to{" "}
         <Link className={css.link} to="/">
-          Home page
+          Home
         </Link>
         .
       </p>

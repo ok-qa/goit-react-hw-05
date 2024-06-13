@@ -26,7 +26,16 @@
   border-color: rgb(110, 155, 66);
 }
 
+.searchField {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(6, 248, 42, 0.168);
+  padding: 10px;
+  margin: auto;
+}
+
 .search {
   display: flex;
+  justify-content: center;
   align-items: center;
 }

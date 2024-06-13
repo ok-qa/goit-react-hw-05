@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import css from "./Navigation.module.css";
 
@@ -17,7 +17,7 @@ const Navigation = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/search" className={buildLinkClass}>
+            <NavLink to="/movies" className={buildLinkClass}>
               Search Movies
             </NavLink>
           </li>

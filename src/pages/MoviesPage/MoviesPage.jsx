@@ -4,7 +4,6 @@ import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
 import css from "./MoviesPage.module.css";
 import { getMoviesByQuery } from "../../api-servise";
-import toast, { Toaster } from "react-hot-toast";
 
 const MoviesPage = () => {
   const [query, setQuery] = useState("");
@@ -25,16 +24,6 @@ const MoviesPage = () => {
 
   const handleChange = (event) => {
     const value = event.target.value;
-    // if (value.length === 0) {
-    //   toast.error("Uh oh! The searchfield is empty...", {
-    //     style: {
-    //       border: "1px solid #713200",
-    //       padding: "16px",
-    //       color: "#713200",
-    //     },
-    //   });
-    //   return;
-    // }
     setQuery(value);
   };
 
@@ -63,7 +52,6 @@ const MoviesPage = () => {
 
   return (
     <>
-      {/* <Toaster position="top-center" /> */}
       <form onSubmit={handleSubmit} className={css.search}>
         <input
           className={css.input}

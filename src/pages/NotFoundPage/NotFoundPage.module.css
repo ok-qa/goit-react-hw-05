@@ -1,6 +1,7 @@
 .link {
-  color: rgb(15, 82, 112);
+  color: rgb(85, 118, 108);
   text-decoration: dotted;
+  font-style: italic;
 }
 .link:hover {
   color: rgb(42, 25, 106);

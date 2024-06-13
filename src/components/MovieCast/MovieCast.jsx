@@ -19,7 +19,6 @@ const MovieCast = () => {
         setIsLoading(true);
         setError(false);
       } catch (error) {
-        console.error("error", error);
         setError(true);
       } finally {
         setIsLoading(false);
