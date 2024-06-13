@@ -27,10 +27,17 @@ const MovieCast = () => {
     getCast();
   }, [movieId]);
 
+  console.log("cast: ", cast);
+
   return (
     <>
       {error && <ErrorMessage />}
       {isLoading && <Loader />}
+      {!isLoading && !error && cast?.cast.length === 0 && (
+        <p className={css.noCastText}>
+          We don't have any cast information for `${movieId}`.
+        </p>
+      )}
       <ul className={css.castList}>
         {cast?.cast.length > 0 &&
           cast.cast.map((cast) => (
