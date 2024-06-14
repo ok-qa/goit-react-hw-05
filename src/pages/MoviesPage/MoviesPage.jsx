@@ -35,7 +35,6 @@ const MoviesPage = () => {
     try {
       const data = await getMoviesByQuery(query);
       setMovies(data);
-      setQuery("");
     } catch (error) {
       console.error("Error fetching movies:", error);
       setError(true);

@@ -14,9 +14,10 @@ const MovieCast = () => {
   useEffect(() => {
     const getCast = async () => {
       try {
+        setIsLoading(true);
         const movieCast = await getMovieCast(movieId);
         setCast(movieCast);
-        setIsLoading(true);
+
         setError(false);
       } catch (error) {
         setError(true);
@@ -26,8 +27,6 @@ const MovieCast = () => {
     };
     getCast();
   }, [movieId]);
-
-  console.log("cast: ", cast);
 
   return (
     <>

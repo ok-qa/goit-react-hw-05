@@ -3,8 +3,6 @@ import css from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
-  console.log("poster", movies[0].poster_path);
-  console.log("location pathname:", location.pathname);
   return (
     <div className={css.wrapper}>
       <ul className={css.moviesList}>

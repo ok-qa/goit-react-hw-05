@@ -13,12 +13,12 @@ const MovieReviews = () => {
   useEffect(() => {
     const getReviews = async () => {
       try {
+        setIsLoading(true);
         const reviews = await getMovieReviews(movieId);
         setMovieReviews(reviews);
-        setIsLoading(true);
+
         setError(false);
       } catch (error) {
-        console.error("error", error);
         setError(true);
       } finally {
         setIsLoading(false);
@@ -27,7 +27,6 @@ const MovieReviews = () => {
     getReviews();
   }, [movieId]);
 
-  console.log("reviews: ", movieReviews);
   return (
     <>
       {error && <ErrorMessage />}
