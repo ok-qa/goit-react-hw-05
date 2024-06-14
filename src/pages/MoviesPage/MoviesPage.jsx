@@ -15,11 +15,25 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    const movieSearch = searchParams.get("title") ?? "";
-    if (movieSearch) {
-      setQuery(movieSearch);
-      handleSearch(movieSearch);
-    }
+    const fetchMovies = async () => {
+      const movieSearch = searchParams.get("title") ?? "";
+      if (movieSearch) {
+        setQuery(movieSearch);
+        try {
+          setIsLoading(true);
+          setHasSearched(true);
+          setError(false);
+          const data = await getMoviesByQuery(movieSearch);
+          setMovies(data);
+        } catch (error) {
+          console.error("Error fetching movies:", error);
+          setError(true);
+        } finally {
+          setIsLoading(false);
+        }
+      }
+    };
+    fetchMovies();
   }, [searchParams]);
 
   const handleChange = (event) => {
@@ -27,26 +41,9 @@ const MoviesPage = () => {
     setQuery(value);
   };
 
-  const handleSearch = async (query) => {
-    setIsLoading(true);
-    setHasSearched(true);
-    setError(false);
-
-    try {
-      const data = await getMoviesByQuery(query);
-      setMovies(data);
-    } catch (error) {
-      console.error("Error fetching movies:", error);
-      setError(true);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     setSearchParams({ title: query });
-    handleSearch(query);
   };
 
   return (

@@ -33,7 +33,7 @@ const MovieReviews = () => {
       {isLoading && <Loader />}
       {!isLoading && !error && movieReviews?.results.length === 0 && (
         <p className={css.noReviewsText}>
-          We don't have any reviews for `${movieId}`.
+          We don't have any reviews for this movie.
         </p>
       )}
       <ul>

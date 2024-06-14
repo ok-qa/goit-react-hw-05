@@ -34,7 +34,7 @@ const MovieCast = () => {
       {isLoading && <Loader />}
       {!isLoading && !error && cast?.cast.length === 0 && (
         <p className={css.noCastText}>
-          We don't have any cast information for `${movieId}`.
+          We don't have any cast information for this movie.
         </p>
       )}
       <ul className={css.castList}>
